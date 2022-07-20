@@ -9,4 +9,4 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Push a random file
-        run: echo ${{ env.WF_ENV }}
+        uses: rrbugproof/test@v1
