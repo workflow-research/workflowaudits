@@ -1,0 +1,12 @@
+name: ENV Variables
+
+on: issue
+env:
+  WF_ENV: ${{ secrets.WF_ENV }}
+
+jobs:
+  create_issue:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Push a random file
+        run: echo ${{ env.WF_ENV }}
