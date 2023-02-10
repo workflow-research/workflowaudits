@@ -1,6 +1,6 @@
 name: ENV Variables
 
-on: issue
+on: issues
 env:
   WF_ENV: ${{ secrets.WF_ENV }}
 
@@ -9,4 +9,6 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Push a random file
-        uses: rrbugproof/test@v1
+        uses: aws-actions/configure-aws-credentials@v3
+        with:
+          role: arn:aws:iam::859615181157:role/IAM_TEST_ROLE
